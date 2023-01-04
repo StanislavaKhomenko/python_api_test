@@ -1,0 +1,1 @@
+Pet project of automation API testing using pytest. Test site: https://petstore.swagger.io/

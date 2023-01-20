@@ -16,3 +16,14 @@ valid_get_user_schema = {
     },
     "required": ["id", "userStatus"]
 }
+
+valid_create_pet_schema = {
+    "properties": {
+        "category": {"name": "string"},
+        "name": {"type": "string"},
+        "photoUrls": {"type": "array"},
+        "tags": {"type": "array"},
+        "status": {"type": "string"}
+    },
+    "required": ["id"]
+}

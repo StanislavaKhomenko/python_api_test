@@ -27,3 +27,23 @@ valid_create_pet_schema = {
     },
     "required": ["id"]
 }
+
+valid_get_pets_schema = [
+    {
+        "properties": {
+            "category": {"name": "string"},
+            "name": {"type": "string"},
+            "photoUrls": {"type": "array"},
+            "tags": {"type": "array"},
+            "status": {"type": "string"}
+        }
+    }
+]
+
+valid_order_schema = {
+    "properties": {
+        "shipDate": {"type": "string"},
+        "status": {"type": "string"},
+        "complete": {"type": "boolean"}
+    }
+}

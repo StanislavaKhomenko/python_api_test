@@ -47,3 +47,11 @@ valid_order_schema = {
         "complete": {"type": "boolean"}
     }
 }
+
+valid_inventories_schema = {
+    "properties": {
+        "sold": {"type": "number"},
+        "pending": {"type": "number"},
+        "available": {"type": "number"}
+    }
+}

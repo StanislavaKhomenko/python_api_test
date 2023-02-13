@@ -37,3 +37,7 @@ class TestStoreOperations:
         assert response.status == 200
         another_response = StoreOperations(url=URL, order_id=order_id).delete_order(schema=schemas.valid_schema)
         assert another_response.status == 404
+
+    def test_get_inventories(self):
+        response = StoreOperations(url=URL, order_id=None).get_inventories(schema=schemas.valid_inventories_schema)
+        assert response.status == 200

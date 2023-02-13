@@ -15,7 +15,7 @@ class UserOperations:
         self.path = pathes
 
     def register_user(self, body: dict, schema: dict):
-        response = self.client.custom_request("POST", f"{self.url}{self.path.USER}", body=body)
+        response = self.client.custom_request("POST", f"{self.url}{self.path.USER}", json=body)
         validate(instance=response.json(), schema=schema)
         logger.info(response.text)
         return ResponseModel(status=response.status_code, response=response.json())
@@ -124,6 +124,12 @@ class StoreOperations:
 
     def delete_order(self, schema: dict):
         response = self.client.custom_request("DELETE", f"{self.url}{self.path.ORDER_ID}{self.order_id}")
+        validate(instance=response.json(), schema=schema)
+        logger.info(response.text)
+        return ResponseModel(status=response.status_code, response=response.json())
+
+    def get_inventories(self, schema: dict):
+        response = self.client.custom_request("GET", f"{self.url}{self.path.INVENTORY}")
         validate(instance=response.json(), schema=schema)
         logger.info(response.text)
         return ResponseModel(status=response.status_code, response=response.json())
